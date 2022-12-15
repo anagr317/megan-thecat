@@ -6,7 +6,11 @@
 	<title></title>
 </head>
 <body>
+	<ul>
+		
+	</ul>
 	<script>
+		const lista = document.querySelector("ul");
 	//Crear una conexión: objeto XHR
 	const conexion = new XMLHttpRequest(); //le da los datos a conexión 
 	//Configurar la conexión: URL, método (get,both…)
@@ -14,10 +18,17 @@
 	//Enviar la petición
 	conexion.send();
 	//Esperar la respuesta y gestionarla
+
 	conexion.addEventListener("load",function(){
-		console.log(conexion.responseText);
+		conexión.responseText.split(",").forEach( palabra => {
+			let li = document.createElement("li");
+			li.innerHTML = palabra;
+			lista.appendChild(li);
+		})
 	});
-	
+
+
+
 	</script>
 </body>
 </html>

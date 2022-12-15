@@ -20,7 +20,7 @@
 	//Esperar la respuesta y gestionarla
 
 	conexion.addEventListener("load",function(){
-		conexión.responseText.split(",").forEach( palabra => {
+		conexion.responseText.split(",").forEach( palabra => {
 			let li = document.createElement("li");
 			li.innerHTML = palabra;
 			lista.appendChild(li);
